@@ -45,38 +45,13 @@ Features
 - JSON-WSP support - ideal for AJAX backend
 - Run web service methods in background with no effort by using Ladon tasks
 
-Follow
-------
-
-.. image:: https://bytebucket.org/jakobsg/ladon/raw/master/docs/source/images/bitbucket.png
-   :target: https://bitbucket.org/jakobsg/ladon
-
-.. image:: https://bytebucket.org/jakobsg/ladon/raw/master/docs/source/images/youtube.png
-   :target: http://www.youtube.com/playlist?list=PLFD1020FE0CB288FC
-
-HipChat
--------
-
-.. image:: https://bytebucket.org/jakobsg/ladon/raw/master/docs/source/images/hipchat.png
-   :target: https://3dteam.hipchat.com/chat/room/3449206
-
-Bugs
-----
-Report bugs to: https://bitbucket.org/jakobsg/ladon/issues?status=new&status=open
-
-
-Contribute
-----------
-
-There are plenty of things to do like implementing more interface modules making better service navigation etc. If you are interested in helping out with contributions or even want to join the development team - Go to Ladon's Bitbucket page: https://bitbucket.org/jakobsg/ladon
-
 What does Ladon mean?
 ---------------------
 Ladon is a serpent-like dragon from Greek mythology which might be given multiple
 heads, a hundred in Aristophanes' The Frogs (a passing remark in line 475). each
 head might speak with different voices.
 
-.. image:: https://bytebucket.org/jakobsg/ladon/raw/master/logos/ladon2_button.jpg
+.. image:: https://github.com/masters-india/ladon/raw/master/logos/ladon2_button.jpg
 
 Like Ladon the dragon has many heads that speak with different voices Ladon the
 Web Service has many interfaces that communicate with different protocols. Ladon
