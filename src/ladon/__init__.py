@@ -3,7 +3,7 @@ import os
 _version_info = {
     'major': 1,
     'minor': 0,
-    'micro': 7
+    'micro': 8
 }
 
 __version__ = "%(major)s.%(minor)s.%(micro)s" % _version_info

@@ -70,11 +70,14 @@ class SOAP11ServiceDescriptor(ServiceDescriptor):
                             servicenumber, 'urn:%s' % servicename)
         types.appendChild(schema)
 
-        # Import namespace schema
-        import_tag = doc.createElement('xsd:import')
-        import_tag.setAttribute(
-            'namespace', 'http://schemas.xmlsoap.org/soap/encoding/')
-        schema.appendChild(import_tag)
+        # --------------------------------------------------- #
+        # Removing the import section due to SAP limitation
+        # # Import namespace schema
+        # import_tag = doc.createElement('xsd:import')
+        # import_tag.setAttribute(
+        #     'namespace', 'http://schemas.xmlsoap.org/soap/encoding/')
+        # schema.appendChild(import_tag)
+        # --------------------------------------------------- #
 
         # Define types, the type_order variable holds all that need to be defined and in the
         # correct order.
@@ -343,10 +346,13 @@ class SOAP11ServiceDescriptor(ServiceDescriptor):
 
         service = doc.createElement('wsdl:service')
         service.setAttribute('name', servicename)
-        documentation = doc.createElement('wsdl:documentation')
-        documentation.appendChild(doc.createTextNode(
-            'Ladon generated service definition'))
-        service.appendChild(documentation)
+        # --------------------------------------------------- #
+        # Removing the documentation tag, as it is irrelevant 
+        # documentation = doc.createElement('wsdl:documentation')
+        # documentation.appendChild(doc.createTextNode(
+        #     'Ladon generated service definition'))
+        # service.appendChild(documentation)
+        # --------------------------------------------------- #
         port = doc.createElement('wsdl:port')
         port.setAttribute('name', servicename)
         port.setAttribute('binding', 'tns:%s' % servicename)
