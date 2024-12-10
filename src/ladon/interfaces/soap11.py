@@ -309,10 +309,9 @@ class SOAP11ServiceDescriptor(ServiceDescriptor):
                 mime_content_part.appendChild(mime_content)
 
             input_soapbody = doc.createElement('soap:body')
-            input_soapbody.setAttribute('use', 'encoded')
+            input_soapbody.setAttribute('use', 'literal')
             input_soapbody.setAttribute('namespace', 'urn:%s' % servicename)
-            input_soapbody.setAttribute(
-                'encodingStyle', 'http://schemas.xmlsoap.org/soap/encoding/')
+            # input_soapbody.setAttribute('encodingStyle', 'http://schemas.xmlsoap.org/soap/encoding/')
             body_parent.appendChild(input_soapbody)
             operation.appendChild(input_tag)
             output_tag = doc.createElement('wsdl:output')
@@ -330,10 +329,9 @@ class SOAP11ServiceDescriptor(ServiceDescriptor):
                 mime_content_part.appendChild(mime_content)
 
             output_soapbody = doc.createElement('soap:body')
-            output_soapbody.setAttribute('use', 'encoded')
+            output_soapbody.setAttribute('use', 'literal')
             output_soapbody.setAttribute('namespace', 'urn:%s' % servicename)
-            output_soapbody.setAttribute(
-                'encodingStyle', 'http://schemas.xmlsoap.org/soap/encoding/')
+            # output_soapbody.setAttribute('encodingStyle', 'http://schemas.xmlsoap.org/soap/encoding/')
             body_parent.appendChild(output_soapbody)
             operation.appendChild(output_tag)
 
@@ -679,7 +677,7 @@ xmlns:xsd="http://www.w3.org/1999/XMLSchema">
         # Set the fault values
         faultcode_elem.appendChild(d.createTextNode(service_exc.faultcode))
         faultstring_elem.appendChild(d.createTextNode(service_exc.faultstring))
-        detail_elem.appendChild(d.createTextNode(detail))
+        # detail_elem.appendChild(d.createTextNode(detail))
         # Return the SoapFault XML object
         return d.toxml(encoding=encoding)
 
