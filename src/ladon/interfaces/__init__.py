@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import sys
-import imp
 import os
 import inspect
 from ladon.exceptions.interfaces import *

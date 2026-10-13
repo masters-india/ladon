@@ -54,9 +54,9 @@ class ThreadedTaskRunner(ManagedThread):
         super(ThreadedTaskRunner, self).__init__()
 
     def run_managed(self):
-        argspecs = inspect.getargspec(self.method)
+        argspecs = inspect.getfullargspec(self.method)
         try:
-            if argspecs.keywords != None:
+            if argspecs.varkw != None:
                 res = self.method(*(self.args), **(self.kw))
             else:
                 res = self.method(*(self.args))
@@ -76,9 +76,9 @@ class MultiProcessTaskRunner(ManagedProcess):
         super(MultiProcessTaskRunner, self).__init__(cache_client)
 
     def run_managed(self):
-        argspecs = inspect.getargspec(self.method)
+        argspecs = inspect.getfullargspec(self.method)
         try:
-            if argspecs.keywords != None:
+            if argspecs.varkw != None:
                 res = self.method(*(self.args), **(self.kw))
             else:
                 res = self.method(*(self.args))

@@ -469,7 +469,7 @@ class LadonMethodInfo(object):
     def __init__(self, sinfo, f, *def_args, **def_kw):
         global rx_doc_params, rx_doc_rtype, rx_doc_param_lines
         # Inspect the methods's parameters
-        argspecs = inspect.getargspec(f)
+        argspecs = inspect.getfullargspec(f)
         # Get the method's doc-string
         doc = inspect.getdoc(f)
         if doc:
@@ -485,7 +485,7 @@ class LadonMethodInfo(object):
         # helper tools to the method. Helper tools are sent via keyword arguments
         # therefore keyword arguments are required in the method in order to recieve
         # the helper tools
-        self._has_keywords = argspecs.keywords != None
+        self._has_keywords = argspecs.varkw != None
         # _arg_names,_defaults: Store method parameter names and defalut values here.
         # These will be used later in the parsing process.
         self._arg_names = argspecs.args[1:]

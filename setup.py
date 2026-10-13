@@ -11,9 +11,10 @@ if os.path.exists('README.rst'):
 if os.path.exists('CHANGES.rst'):
     changes = open('CHANGES.rst').read()
 
-import imp
-m = imp.load_source('init', 'src/ladon/__init__.py')
-VERSION = '%(major)s.%(minor)s.%(micro)s' % m._version_info
+import re
+with open('src/ladon/__init__.py') as f:
+    _version_info = eval(re.search(r'_version_info\s*=\s*(\{.*?\})', f.read(), re.S).group(1))
+VERSION = '%(major)s.%(minor)s.%(micro)s' % _version_info
 
 SHORT_DESC = "Serve your python methods to several web service interfaces at once, including JSON-WSP, SOAP and JSON-RPC."
 PACKAGES = find_packages('src')
